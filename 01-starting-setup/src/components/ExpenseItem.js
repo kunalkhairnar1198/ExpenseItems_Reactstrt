@@ -1,12 +1,16 @@
 import './ExpenseItem.css';
 
-function ExpenseItem() {
+function ExpenseItem(props) {
 
   //add variable in jsx component it is use dynamically inside the javascript exprestion 
-  let expenseDate = new Date(2010, 10, 11);
-  let expenseTitle = 'Car Insurance';
-  let expenseAmount = 294.67;
-  let LocationOfExpenditure = 'where spend the money';
+  // let expenseDate = new Date(2010, 10, 11);
+  // let expenseTitle = 'Car Insurance';
+  // let expenseAmount = 294.67;
+  // let LocationOfExpenditure = 'where spend the money';
+
+  //props is properties it allow to access another (parent component) component prop can access inside the child(component i.e expendseItem.js)
+  //React allows the single parameter can access because props data store in key-value pair it access like props.key
+  //  it makes a ReactComponent Reusable and interactive 
 
   return (
     //style
@@ -16,11 +20,11 @@ function ExpenseItem() {
 
 
     <div className="expense-item">
-      <div>{expenseDate.toISOString()}</div>
+      <div>{props.date.toISOString()}</div>
       <div className="expense-item__description">
-        <h2>{expenseTitle}</h2>
-        <div className='expense-item__location'>{LocationOfExpenditure}</div>
-        <div className="expense-item__price">${expenseAmount}</div>
+        <h2>{props.title}</h2>
+        <div className='expense-item__location'>{props.LocationOfExpenditure}</div>
+        <div className="expense-item__price">${props.amount}</div>
       </div>
     </div>
   );
