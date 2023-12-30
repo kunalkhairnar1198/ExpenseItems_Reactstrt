@@ -31,9 +31,7 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      {/* <p>this also visible</p> */}
-      {/* it will make reusable child component inside app.js component passing the props  */}
-      {/* 4 function call inside the App compo and pass props expense data 4 times  */}
+      {/* Dynamicaly call access object inside the jsx and pass props to child ExpenseItem Components inside the {culy braces} on Each ExpenseItem called */}
       
       {/* <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} LocationOfExpenditure={expenses[0].LocationOfExpenditure} date={expenses[0].date}></ExpenseItem>
       <ExpenseItem title={expenses[1].title} amount={expenses[1].amount} LocationOfExpenditure={expenses[1].LocationOfExpenditure} date={expenses[1].date}></ExpenseItem>
@@ -41,8 +39,8 @@ function App() {
       <ExpenseItem title={expenses[3].title} amount={expenses[3].amount} LocationOfExpenditure={expenses[3].LocationOfExpenditure} date={expenses[3].date}></ExpenseItem> */}
  
    {/* it has same as previous functional call on each iteration call compo but different logic */}
-    {/* if you have ExpenseItem component multiple times for each expense */}
-    {/* use map function iterate over expenses array and dynamically generate the components */}
+    {/* if you have 100 Expenses how can pass it in props on each ExpenseItem call */}
+    {/* The map function is used to iterate over each element in the expenses array. For each expense, it dynamically generates (like prev calls on ExpenseItems) an ExpenseItem component with the relevant props. */}
      
      {expenses.map((expense) => (
         <ExpenseItem
