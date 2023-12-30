@@ -1,29 +1,17 @@
 
 import './ExpenseItem.css';
-
+import ExpenseDate from './ExpenseDate';
+import ExpenseDetail from './ExpenseDetail';
 function ExpenseItem(props) {
  
-  //manipulate date data using seprate variable  its more readable 
-  let date = props.date.toLocaleString('en-US', {month : 'long'})
-  let day = props.date.toLocaleString('en-US', {day : '2-digit'})
-  let year = props.date.getFullYear()
-
   return (
     
     <div className="expense-item">
-      {/* manipulate date data on created new div as can use js expresion access dynamically variables */}
-      {/* this code provide date month year dynamicaly manipulate date data in seprate div it jsx- allowing to redable*/}
-        <div>
-          <div>{date}</div>
-          <div>{day}</div>
-          <div>{year}</div>
-        </div>
+
+      {/* this ExpenseDate and ExpenseDetail is child component its make reusable component and passing porps in the child components elements */}
+     <ExpenseDate date={props.date}/>
         
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className='expense-item__location'>{props.LocationOfExpenditure}</div>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
+     <ExpenseDetail LocationOfExpenditure={props.LocationOfExpenditure} amount={props.amount}  location={props.location}   title={props.title} />
     </div>
   );
 }
