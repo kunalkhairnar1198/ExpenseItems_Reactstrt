@@ -1,6 +1,5 @@
-
 import './ExpenseItem.css'
-function ExpenseDetail(props) {
+const ExpenseDetail = (props) => {
   return (
     <div className="expense-item__description">
       <h2>{props.title}</h2>
@@ -12,4 +11,4 @@ function ExpenseDetail(props) {
 
 export default ExpenseDetail
 
-//this component is reusable component this component will use another component 
+// //this component is reusable component this component will use another component 
