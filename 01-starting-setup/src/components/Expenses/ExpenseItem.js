@@ -10,11 +10,17 @@ const ExpenseItem = (props) => {
 
     let DeleteHnadler = (e) => {
       console.log("hey clicked");
-  
-      let currentCard = e.target.closest(".expense-item");
-      let parentOfExpense = currentCard.parentElement;
-      parentOfExpense.removeChild(currentCard);
-      
+      //on Delete handler use in dom Manipulation
+      // let currentCard = e.target.closest(".expense-item");
+      // let parentOfExpense = currentCard.parentElement;
+      // parentOfExpense.removeChild(currentCard);
+
+      //another way to delete event will occur
+       e.preventDefault()
+       let parele = document.querySelector('.expense-item')
+        if(parele){
+        parele.remove(parele)
+        } 
     };
     
   return (
