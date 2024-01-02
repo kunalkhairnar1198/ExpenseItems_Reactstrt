@@ -1,3 +1,4 @@
+import ExpenseForm from "./components/ExpenseForm/ExpenseForm";
 import Expenses from "./components/Expenses/Expenses";
 const App = () => {
 
@@ -30,6 +31,7 @@ const App = () => {
 
   return (
     <div>
+      <ExpenseForm/>
       <h2>Let's get started!</h2>
       {/* Dynamicaly call access object inside the jsx and pass props to child ExpenseItem Components inside the {culy braces} on Each ExpenseItem called */}
       
