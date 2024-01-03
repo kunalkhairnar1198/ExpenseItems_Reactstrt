@@ -8,21 +8,19 @@ import Card from '../UI/Card';
 
 const ExpenseItem = (props) => {
     
-  // let title = props.title
   const [title, setTitle] = useState(props.title)
   console.log('ExpenseItem evaluated by react')
-
     const updateHandler = () => {
-          // title = 'updated!';
           setTitle('updated!')
           console.log(title)
     };
+
     //adding useState when updateAmount click then umount will changed
-const [amount, setAmount] = useState(props.amount)
-    const updateAmount =()=>{
-        setAmount('100')
-        console.log(amount)
-    }
+  const [amount, setAmount] = useState(props.amount)
+      const updateAmount =()=>{
+          setAmount('100')
+          console.log(amount)
+      }
     
   return (
     

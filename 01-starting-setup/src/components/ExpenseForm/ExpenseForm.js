@@ -1,23 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ExpenseForm.css'
 
 function ExpenseForm() {
     
+  //update the user input state in the form
+const [enterTitle, setTitle] = useState('')
+const [enterAmount, setAmount] = useState('')
+const [enterDate, setDate] = useState('')
 
    
     const handleTitle = (event) => {
-      let Title = event.target.value;
-      console.log(Title);
+      setTitle(event.target.value);
+      console.log(enterTitle)
     };
   
     const handleAmount = (event) => {
-     let Amount  = event.target.value;
-      console.log(Amount);
+      setAmount(event.target.value);
+      console.log(enterAmount)
     };
   
     const handleDate = (event) => {
-      let Date = event.target.value;
-      console.log(Date);
+      setDate(event.target.value);
+      console.log(enterDate)
+    };
+
+    const addExpense = () => {
+      console.log('Adding expense:', enterTitle, enterAmount, enterDate);
     };
 
     return (
@@ -40,7 +48,7 @@ function ExpenseForm() {
             </div>
         
             <div className='new-expense__actions'>
-                <button type='submit'>Add Expense</button>
+                <button type='submit' onClick={addExpense}>Add Expense</button>
             </div>
         </form>
     </div>
