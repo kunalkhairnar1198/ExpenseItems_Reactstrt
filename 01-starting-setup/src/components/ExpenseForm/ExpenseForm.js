@@ -4,29 +4,42 @@ import './ExpenseForm.css'
 function ExpenseForm() {
     
   //update the user input state in the form
-const [enterTitle, setTitle] = useState('')
-const [enterAmount, setAmount] = useState('')
-const [enterDate, setDate] = useState('')
+// const [enterTitle, setTitle] = useState('')
+// const [enterAmount, setAmount] = useState('')
+// const [enterDate, setDate] = useState('')
 
-   
-    const handleTitle = (event) => {
-      setTitle(event.target.value);
-      console.log(enterTitle)
-    };
-  
-    const handleAmount = (event) => {
-      setAmount(event.target.value);
-      console.log(enterAmount)
-    };
-  
-    const handleDate = (event) => {
-      setDate(event.target.value);
-      console.log(enterDate)
-    };
 
-    const addExpense = () => {
-      console.log('Adding expense:', enterTitle, enterAmount, enterDate);
-    };
+    //how you can convert the multiple state into a single state.
+    const [userInput, setUserInput]= useState({
+      Title:'',
+      amount:'',
+      Date:'',
+    })
+    const handleTitle=(event)=>{
+      setUserInput((prevstate)=>({
+        ...prevstate,
+        Title: event.target.value,
+      }))
+         console.log('it will imeediately execute',userInput)
+         console.log('targeted value i.e type value',event.target.value)
+    }
+    const handleAmount=(event)=>{
+      setUserInput({
+        ...userInput, //it holds prevstate object values create copy they will immediately executed
+        amount :event.target.value, //when amount setUserInput fun call then userInput prev value will updated, when they will execute only pahili value
+      })
+         console.log(userInput)
+         console.log(event.target.value)
+    }
+    const handleDate=(event)=>{
+      setUserInput({
+        ...userInput,
+        Date :event.target.value,
+      })
+         console.log(userInput)
+         console.log(event.target.value)
+    }
+    
 
     return (
     <div className='new-expense'>
@@ -43,12 +56,12 @@ const [enterDate, setDate] = useState('')
                 </div>
                 <div className='new-expense__control'>
                     <label>Date</label>
-                    <input type='date' onChange={handleDate} />
+                    <input type='date' onChange={handleDate}  />
                 </div>
             </div>
         
             <div className='new-expense__actions'>
-                <button type='submit' onClick={addExpense}>Add Expense</button>
+                <button type='submit'>Add Expense</button>
             </div>
         </form>
     </div>
