@@ -16,18 +16,21 @@ function ExpenseForm() {
       Date:'',
     })
     const handleTitle=(event)=>{
+       // setTitle(event.target.value)  //piece of state update inside the function not multiple state handle
       setUserInput((prevstate)=>({
         ...prevstate,
         Title: event.target.value,
       }))
     }
     const handleAmount=(event)=>{
+       // setAmount(event.target.value)
       setUserInput({
         ...userInput, //it holds prevstate object values create copy they will immediately executed
         amount :event.target.value, //when amount setUserInput fun call then userInput prev value will updated, when they will execute only pahili value
       })
     }
     const handleDate=(event)=>{
+      // setDate(event.target.value)
       setUserInput({
         ...userInput,
         Date :event.target.value,
