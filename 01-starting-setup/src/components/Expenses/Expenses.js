@@ -10,7 +10,10 @@ const Expenses = (props)=> {
  
     const filterChangeHandler =(SelectedYear)=>{
       setFilterYear(SelectedYear)
+      console.log('selected year print',SelectedYear)
     }
+    
+
   return (
 
      <Card className="expenses">
