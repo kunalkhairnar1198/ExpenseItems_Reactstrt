@@ -12,7 +12,10 @@ const Expenses = (props)=> {
       setFilterYear(SelectedYear)
       console.log('selected year print',SelectedYear)
     }
-    
+    //work filter functionality
+    const filteredExpenses = props.items.filter(expense => {
+      return expense.date.getFullYear().toString() === filterYear;
+    });
 
   return (
 
@@ -24,7 +27,7 @@ const Expenses = (props)=> {
     {/* if you have 100 Expenses how can pass it in props on each ExpenseItem call */}
     {/* The map function is used to iterate over each element in the expenses array. For each expense, it dynamically generates (like prev calls on ExpenseItems) an ExpenseItem component with the relevant props. */}
      
-    {props.items.map((expense) => (
+    {filteredExpenses.map((expense) => (
         <ExpenseItem
           key={expense.id} 
           title={expense.title}

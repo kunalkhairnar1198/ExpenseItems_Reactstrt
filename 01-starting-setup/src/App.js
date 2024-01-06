@@ -43,7 +43,7 @@ const[expenses, setExpenses] = useState(Dumy_expenses)
 
   return (
     <div>
-      <NewExpenses onAddExpenseHandler={addExpenseHandler} />
+      <NewExpenses onAddExpenseHandler={addExpenseHandler}/>
       <h2>Let's get started!</h2>
       {/* Dynamicaly call access object inside the jsx and pass props to child ExpenseItem Components inside the {culy braces} on Each ExpenseItem called */}
       <Expenses items={expenses}/>
