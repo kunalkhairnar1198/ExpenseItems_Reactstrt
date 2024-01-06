@@ -11,7 +11,7 @@ const [enterExpenditure, setExpenditure] = useState('')
 
 
     const handleTitle=(event)=>{
-       setTitle(event.target.value)  //piece of state update inside the function not multiple state handle
+       setTitle(event.target.value)  
     }
     const handleAmount=(event)=>{
        setAmount(event.target.value)
@@ -49,24 +49,24 @@ const [enterExpenditure, setExpenditure] = useState('')
     
         <form onSubmit={onSubmitHandler}>
              <h1>cretate form Expense And handle with vanila javascript</h1>
-            <div className='new-expense__controls'>
-                <div className='new-expense__control'>
-                    <label>Title</label>
-                    <input type='text' value={enterTitle} onChange={handleTitle}/>
+                <div className='new-expense__controls'>
+                    <div className='new-expense__control'>
+                        <label>Title</label>
+                        <input type='text' value={enterTitle} onChange={handleTitle}/>
+                    </div>
+                    <div className='new-expense__control'>
+                        <label>Amount</label>
+                        <input type='number' value={enterAmount} onChange={handleAmount} />
+                    </div>
+                    <div className='new-expense__control'>
+                        <label>Date</label>
+                        <input type='date' value={enterDate} onChange={handleDate}  />
+                    </div>
+                    <div className='new-expense__control'>
+                        <label>Expenditure</label>
+                        <input type='text' value={enterExpenditure} onChange={handleExpenditure}  />
+                    </div>
                 </div>
-                <div className='new-expense__control'>
-                    <label>Amount</label>
-                    <input type='number' value={enterAmount} onChange={handleAmount} />
-                </div>
-                <div className='new-expense__control'>
-                    <label>Date</label>
-                    <input type='date' value={enterDate} onChange={handleDate}  />
-                </div>
-                <div className='new-expense__control'>
-                    <label>Expenditure</label>
-                    <input type='text' value={enterExpenditure} onChange={handleExpenditure}  />
-                </div>
-            </div>
         
             <div className='new-expense__actions'>
                 <button type='submit' >Add Expense</button>

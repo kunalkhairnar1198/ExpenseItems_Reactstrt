@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NewExpenses from "./components/ExpenseForm/NewExpenses";
 import Expenses from "./components/Expenses/Expenses";
+
 //it is object array it will pass as an props(properties) in another component dynamicaly 
 const Dumy_expenses = [
   {
@@ -45,12 +46,6 @@ const[expenses, setExpenses] = useState(Dumy_expenses)
       <NewExpenses onAddExpenseHandler={addExpenseHandler} />
       <h2>Let's get started!</h2>
       {/* Dynamicaly call access object inside the jsx and pass props to child ExpenseItem Components inside the {culy braces} on Each ExpenseItem called */}
-      
-      {/* <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} LocationOfExpenditure={expenses[0].LocationOfExpenditure} date={expenses[0].date}></ExpenseItem>
-      <ExpenseItem title={expenses[1].title} amount={expenses[1].amount} LocationOfExpenditure={expenses[1].LocationOfExpenditure} date={expenses[1].date}></ExpenseItem>
-      <ExpenseItem title={expenses[2].title} amount={expenses[2].amount} LocationOfExpenditure={expenses[2].LocationOfExpenditure} date={expenses[2].date}></ExpenseItem>
-      <ExpenseItem title={expenses[3].title} amount={expenses[3].amount} LocationOfExpenditure={expenses[3].LocationOfExpenditure} date={expenses[3].date}></ExpenseItem> */}
- 
       <Expenses items={expenses}/>
     </div> 
   );

@@ -30,11 +30,7 @@ const ExpenseItem = (props) => {
      <ExpenseDate date={props.date}/>
      <ExpenseDetail LocationOfExpenditure={props.LocationOfExpenditure} amount={amount}  location={props.location}   title={title} />
     
-      {/* <div className="expense-item__description">
-        <h2>{props.title}</h2>
-          <div className='expense-item__location'>{props.LocationOfExpenditure}</div>
-          <div className="expense-item__price">${props.amount}</div>
-      </div> */}
+     {/* state update title and amount in the btns */}
       <button className='expense-item_btn' onClick={updateHandler}>Delete Expense</button>
       <button className='expense-item_btn' onClick={updateAmount}>update amount</button>
     
