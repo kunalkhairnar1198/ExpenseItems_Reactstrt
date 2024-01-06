@@ -23,18 +23,19 @@ const ExpenseItem = (props) => {
       }
     
   return (
-    
-    <Card className="expense-item" >
+   <li> 
+      <Card className="expense-item" >
 
-      {/* this ExpenseDate and ExpenseDetail is child component its make reusable component and passing porps in the child components elements */}
-     <ExpenseDate date={props.date}/>
-     <ExpenseDetail LocationOfExpenditure={props.LocationOfExpenditure} amount={amount}  location={props.location}   title={title} />
-    
-     {/* state update title and amount in the btns */}
-      <button className='expense-item_btn' onClick={updateHandler}>Delete Expense</button>
-      <button className='expense-item_btn' onClick={updateAmount}>update amount</button>
-    
-    </Card>
+        {/* this ExpenseDate and ExpenseDetail is child component its make reusable component and passing porps in the child components elements */}
+      <ExpenseDate date={props.date}/>
+      <ExpenseDetail LocationOfExpenditure={props.LocationOfExpenditure} amount={amount}  location={props.location}   title={title} />
+      
+      {/* state update title and amount in the btns */}
+        <button className='expense-item_btn' onClick={updateHandler}>Delete Expense</button>
+        <button className='expense-item_btn' onClick={updateAmount}>update amount</button>
+      
+     </Card>
+  </li>
   );
 }
 

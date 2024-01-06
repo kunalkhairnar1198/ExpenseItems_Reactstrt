@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Card from '../UI/Card';
 import ExpenseFilter from './ExpenseFilter';
-import ExpenseItem from './ExpenseItem';
+// import ExpenseItem from './ExpenseItem';
 import './Expenses.css';
+import ExpensesList from './ExpensesList';
 
 const Expenses = (props)=> {
   
@@ -17,26 +18,33 @@ const Expenses = (props)=> {
       return expense.date.getFullYear().toString() === filterYear;
     });
 
+   
+
   return (
 
      <Card className="expenses">
  
       <ExpenseFilter selected={filterYear} onChangeHandler={filterChangeHandler} />
+{/* adding conditional rendering  using ternary exresion in jsx*/}
+  
+  {/* {filteredExpenses.length === 0 &&  <p>No Expenses Found.</p>}
+  
+    {filteredExpenses.length === 0 ? (
+        <p>No Expenses Found</p>
+      ):(
+      filteredExpenses.map((expense) => (
+          <ExpenseItem
+            key={expense.id} 
+            title={expense.title}
+            amount={expense.amount}
+            LocationOfExpenditure={expense.LocationOfExpenditure}
+            date={expense.date}
+          />
+        ))
+   )} */}
 
-    {/* it has same as previous functional call on each iteration call compo but different logic */}
-    {/* if you have 100 Expenses how can pass it in props on each ExpenseItem call */}
-    {/* The map function is used to iterate over each element in the expenses array. For each expense, it dynamically generates (like prev calls on ExpenseItems) an ExpenseItem component with the relevant props. */}
-     
-    {filteredExpenses.map((expense) => (
-        <ExpenseItem
-          key={expense.id} 
-          title={expense.title}
-          amount={expense.amount}
-          LocationOfExpenditure={expense.LocationOfExpenditure}
-          date={expense.date}
-        />
-      ))}
-
+   <ExpensesList items={filteredExpenses} />
+   
     </Card>
    
    
