@@ -42,11 +42,11 @@ const [enterExpenditure, setExpenditure] = useState('')
       setAmount('')
       setDate('')
       setExpenditure('')
+      
 
     }
 
     return (
-    
         <form onSubmit={onSubmitHandler}>
              <h1>cretate form Expense And handle with vanila javascript</h1>
                 <div className='new-expense__controls'>
@@ -69,10 +69,11 @@ const [enterExpenditure, setExpenditure] = useState('')
                 </div>
         
             <div className='new-expense__actions'>
-                <button type='submit' >Add Expense</button>
+                <button type='button' onClick={props.onCancel}>cancel</button>
+                <button type='submit' >Add Expense</button> 
             </div>
+           
         </form>
-    
   )
 }
 
