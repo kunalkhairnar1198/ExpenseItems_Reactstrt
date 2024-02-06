@@ -3,6 +3,7 @@ import ExpenseForm from './ExpenseForm'
 
 function NewExpenses(props) {
 const [isEdited, setIsEdited]= useState(false)
+
   // received child function compo entered data and make new obj with id
   const saveExpenseDataHandler =(enteredData)=>{
   console.log(enteredData)

@@ -26,26 +26,10 @@ const Expenses = (props)=> {
      <Card className="expenses">
  
       <ExpenseFilter selected={filterYear} onChangeHandler={filterChangeHandler} />
-{/* adding conditional rendering  using ternary exresion in jsx*/}
-  
-  {/* {filteredExpenses.length === 0 &&  <p>No Expenses Found.</p>}
-  
-    {filteredExpenses.length === 0 ? (
-        <p>No Expenses Found</p>
-      ):(
-      filteredExpenses.map((expense) => (
-          <ExpenseItem
-            key={expense.id} 
-            title={expense.title}
-            amount={expense.amount}
-            LocationOfExpenditure={expense.LocationOfExpenditure}
-            date={expense.date}
-          />
-        ))
-   )} */}
-<ExpensesChart expenses={filteredExpenses}/>
-   <ExpensesList items={filteredExpenses} />
-   
+
+      <ExpensesChart expenses={filteredExpenses}/>
+        <ExpensesList items={filteredExpenses} />
+        
     </Card>
    
    
